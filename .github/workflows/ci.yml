@@ -35,4 +35,4 @@ jobs:
         run: ruff check src tests scripts
 
       - name: Test
-        run: pytest --cov=dfl_spo --cov-report=term-missing
+        run: python -m pytest --cov=dfl_spo --cov-report=term-missing
