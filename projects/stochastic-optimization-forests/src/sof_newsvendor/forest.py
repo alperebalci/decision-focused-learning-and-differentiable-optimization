@@ -44,8 +44,8 @@ class _Node:
     indices: NDArray[np.int64]
     feature: int | None = None
     threshold: float | None = None
-    left: "_Node | None" = None
-    right: "_Node | None" = None
+    left: _Node | None = None
+    right: _Node | None = None
 
 
 class OptimizationTree:
@@ -69,7 +69,7 @@ class OptimizationTree:
         self.x_: NDArray[np.float64] | None = None
         self.y_: NDArray[np.float64] | None = None
 
-    def fit(self, x: ArrayLike, demand: ArrayLike) -> "OptimizationTree":
+    def fit(self, x: ArrayLike, demand: ArrayLike) -> OptimizationTree:
         matrix = np.asarray(x, dtype=float)
         y = np.asarray(demand, dtype=float)
         if matrix.ndim != 2 or y.ndim != 1 or matrix.shape[0] != y.size:
@@ -157,7 +157,7 @@ class OptimizationForest:
         self.random_state = random_state
         self.trees_: list[OptimizationTree] = []
 
-    def fit(self, x: ArrayLike, demand: ArrayLike) -> "OptimizationForest":
+    def fit(self, x: ArrayLike, demand: ArrayLike) -> OptimizationForest:
         matrix = np.asarray(x, dtype=float)
         y = np.asarray(demand, dtype=float)
         rng = np.random.default_rng(self.random_state)
