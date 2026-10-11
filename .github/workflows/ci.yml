@@ -32,7 +32,7 @@ jobs:
           pip install -e ".[dev]"
 
       - name: Lint
-        run: ruff check src scripts tests
+        run: ruff check src tests scripts
 
       - name: Test
         run: python -m pytest --cov=dfl_spo --cov-report=term-missing
