@@ -5,7 +5,12 @@ import random
 from itertools import product
 
 from dfl_spo.credit_offer_dp import (
-    Offer, make_instance, metrics, realized_profit, run_experiment, solve_exact,
+    Offer,
+    make_instance,
+    metrics,
+    realized_profit,
+    run_experiment,
+    solve_exact,
 )
 
 
